@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+	  <style>
+		div#box
+		{
+		width : 50px;
+		height : 50px;
+		border-radius: 25px;
+		position: relative;
+		background : -webkit-radial-gradient(center,navy,white);
+      
+		
+            -webkit-animation: movingimage linear 0.1s 1s 1000 alternate;
+            -moz-animation: movingimage linear 0.1s 1s 1000 alternate;
+            animation: movingimage linear 0.1s 1s 1000 alternate;
+         }
+         @-webkit-keyframes movingimage
+         {
+            0%   {opacity: 1; left: 0px; top: 50px;}
+            25%  {opacity: 1; left: 50px; top: 0px;}
+            50%  {opacity: 1; left: 100px; top: 50px;}
+            75%  {opacity: 1; left: 150px; top: 0px;}
+            100% {opacity: 1; left: 200px; top: 50px;}
+         }
+		 @-moz-animation: movingimage 
+         {
+            0%   {opacity: 1; left: 0px; top: 50px;}
+            25%  {opacity: 1; left: 50px; top: 0px;}
+            50%  {opacity: 1; left: 100px; top: 50px;}
+            75%  {opacity: 1; left: 150px; top: 0px;}
+            100% {opacity: 1; left: 200px; top: 50px;}
+         }
+		 @animation: movingimage 
+         {
+            0%   {opacity: 1; left: 0px; top: 50px;}
+            25%  {opacity: 1; left: 50px; top: 0px;}
+            50%  {opacity: 1; left: 100px; top: 50px;}
+            75%  {opacity: 1; left: 150px; top: 0px;}
+            100% {opacity: 1; left: 200px; top: 50px;}
+         }
+
+         
+	</style>
+	</head>
+<body>
+        <div id="box"></div>
+</body>
+</html>

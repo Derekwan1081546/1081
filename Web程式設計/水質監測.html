@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Sample XML Query</title>
+      <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>	
+      <script>
+        function progress() {
+	    var aq = $("#aqindex").val();
+	    $.ajax({
+		url: "xml.php",
+		data: {
+		   aq: aq
+	        },
+		type: "POST",
+		datatype: "html",
+	        success: function( output ) {
+		   $( "#out" ).html(output);
+	        },
+		error : function(){
+		    alert( "Request failed." );
+		}
+	    });
+	}
+      </script>
+      <style type = "text/css">
+         body  { font-family: sans-serif;
+                 background-color: lightyellow; }
+         table { background-color: lightblue;
+                 border-collapse: collapse;
+                 border: 1px solid gray; }
+         td    { padding: 5px; }
+         tr:nth-child(odd) { background-color: white; }
+      </style>
+   </head>
+ <body>
+      <h1>Real Time Air Pollution</h1>
+      <form method = "post" action = "#">
+         <p>Select a air pollution index:
+            <select id = "aqindex">
+               <option selected>AQI</option>
+               <option>SO2</option>
+               <option>CO</option>
+               <option>O3</option>
+               <option>PM10</option>
+               <option>PM2.5</option>
+               <option>NO2</option>
+	   </select></p>
+         <p><input id = "submit" type="button" value = "Send Query" onclick="progress()"></p>
+      </form>
+      <div id="out"></div>
+   </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Linear Gradient</title>
+      <style type = "text/css">
+      div
+      {
+         width: 200px;
+         height: 200px;
+         border: 5px;
+         border-radius: 100px;
+         padding: 5px 20px;
+         text-align: center;
+         background: -webkit-gradient(
+            linear, center top, center bottom,
+            color-stop(15%, yellow), color-stop(50%, orange),
+            color-stop(75%, red) );
+         background: -moz-linear-gradient(
+            top center, yellow 15%, orange 50%, red 75% );
+         background: linear-gradient(
+            top, yellow 15%, orange 50%, red 75% );
+         float: left;
+         margin-right: 15px;
+      }
+      </style>
+   </head>
+   <body>
+      <div><h2>Vertical Linear Gradient</h2></div>
+   </body>
+</html>

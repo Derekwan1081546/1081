@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Random Dice Images</title> 
+      <style type = "text/css">
+		div#box1
+		{
+			border:1 solid black;
+			height:100px;
+			width:100px;
+		}
+      </style>
+      <script>
+         var box; 
+         function start()
+         {
+            var button = document.getElementById( "rollButton" );
+            button.addEventListener( "click", set, false );
+
+         } // end function start 
+
+         function set()
+         {
+			box=  document.getElementById( "box" );
+            var r = Match.floor( 0+ Match.random() +255);
+			var g = Match.floor( 0+ Match.random() +255);
+			var b = Match.floor( 0+ Match.random() +255);
+			var color="background:rgb("+r+","+g+","+b+")";
+            box.setAttribute( "style", color);
+
+         } // end function setImage
+         window.addEventListener( "load", start, false );
+      </script>
+   </head>
+ <body>
+      <form action = "#">
+         <input id = "rollButton" type = "button" 
+            value = "change color">
+      </form>
+
+		<div id ="box1"></div>
+   </body>
+</html>

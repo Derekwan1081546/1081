@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Random Image Generator</title> 
+	  <style type=  "text/css">
+		div {
+        width : 300px;
+        height : 300px;
+        border : 1px solid black;
+        float: left;
+    }
+		</style>
+
+      <script >
+		var d1,d2,d3;
+		var str=["background:rgb(255,255,255)",
+           "background:rgb(255,255,255)",
+           "background:rgb(255,255,255)"];
+		function start()
+		{
+			var button= document.getElementById( "changecolor" );
+			button.addEventListener( "click", set, false );
+		}// end function start
+		function set()
+		{
+			d1= document.getElementById("d1");
+			d2= document.getElementById("d2");
+			d3= document.getElementById("d3");
+			var r=Math.floor(0+Math.random()*255);
+			var g=Math.floor(0+Math.random()*255);
+			var b=Math.floor(0+Math.random()*255);
+			var color ="background:rgb("+r+","+g+","+b+")";
+			str[2]=str[1];
+			str[1]=str[0];
+			str[0]=color;
+			d1.setAttribute("style",str[0]);
+			d2.setAttribute("style",str[1]);
+			d3.setAttribute("style",str[2]);
+		}// end function set image
+		window.addEventListener( "load", start, false );
+	  </script>
+   </head>
+   <body>
+   <form action = "#">
+      <input id = "changecolor" type ="button"
+         value = "Change Color">
+		</form>
+	<div id = "d1"></div>
+	<div id = "d2"></div>
+	<div id = "d3"></div>
+	</body>
+
+</html>

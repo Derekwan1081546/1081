@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Get Comic</title>
+   
+      <script>
+	  var num=window.prompt("Please input a number:");
+	  num=parseInt(num);
+	  num=num+1;
+	  var output="";
+	  var arr = new Array();
+	  arr[0]=new Array();
+	  arr[0][0]=1;
+	  output=output+"<p>1</p>";
+
+		for (var i=0;i<num-1;i++)
+		{
+			arr[i]= new Array();
+			arr[i][0]=1;
+			output=output+"<p>1 ";
+			for (var j=0;j<i;j++)
+			{
+				var m=i-1;
+				var n=j-1;
+				arr[i][j]=arr[m][j]+arr[m][n];
+				output=output+arr[i][j]+" ";
+			
+			}
+			arr[i][i]=1;
+			output=output+"1</p>;
+		}
+		document.writeln(output);
+
+	  </script>
+   </head>
+   <body>
+      <h1>Pascal Triangle</h1>
+      <div id = "results"></div>
+   </body>
+</html>
